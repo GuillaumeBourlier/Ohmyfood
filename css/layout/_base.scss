@@ -1,0 +1,60 @@
+// Création de variables pour les couleurs, les polices et les tailles de police,... Pour une utilisation cohérente dans tout le projet.
+
+body {
+  font-family: $font-secondary; // Définit la police principale pour tout le contenu du corps de la page, définit par _variables.scss.
+  background-color: $color-canvas; // Applique une couleur de fond à la page, définie par _variables.scss.
+}
+
+//CREATION D'UNE BOUCLE POUR LES TITRES (h1,h2,h3,h4), a chaque titre on applique une police, une taille, un poids et une couleur différente.
+//Interpolation (h#{$i}) : Génère dynamiquement les sélecteurs CSS (h1, h2, etc.).
+// nth() et les listes : Associe les styles spécifiques à chaque titre grâce à des listes de valeurs
+@for $i from 1 through 4 { 
+  h#{$i} { 
+    font-family: nth($list: $font-primary $font-secondary $font-secondary $font-secondary, $n: $i);
+    font-size: nth($list: $font-size-xl $font-size-l $font-size-m $font-size-m, $n: $i);
+    font-weight: nth($list: $font-weight-light $font-weight-bold $font-weight-light $font-weight-bold, $n: $i);
+    color: nth($list: $color-text $color-black $color-text-medium $color-black, $n: $i);
+  }
+}
+// Styles cummuns pour les éléments de formulaire et les boutons.
+input,textarea,select,button {
+  font-family: inherit; // Les champs de formulaire et les boutons hériterent de la police définie dans le parent.
+  font-size: inherit; // Les champs et boutons hériterent de la taille de police.
+  padding: 10px; 
+  border: 1px solid $color-canvas-inverted; 
+}
+// Styles pour les éléments de formulaire et les boutons lorsqu'ils sont selectionnés.
+input:focus,textarea:focus,select:focus {
+  outline: 2px solid transparent; // Supprime le contour par défaut et applique un contour transparent de 2px.
+  border: 1px solid transparent; // Supprime la bordure visuelle lors de la mise au point (focus).
+}
+// Le curseur de la souris se tranforme en pointeur lorsqu'il survole un bouton.
+button {
+  cursor: pointer;
+}
+
+// Cela facilite le calcul de la taille totale de l'élément HTML
+html {
+  box-sizing: border-box; 
+}
+// Les éléments héritent de la propriété box-sizing de l'élément HTML
+*, *::before, *::after {
+  box-sizing: inherit; 
+}
+// Les éléments de base de la page héritent de la police principale.
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl, dd { 
+  margin: 0;
+  padding: 0;
+}
+
+a { // Les liens héritent de la police principale.
+  color: inherit; // Les liens héritent de la couleur du texte du parent.
+  text-decoration: none; // Supprime la décoration par défaut des liens (comme le soulignement).
+  &:visited {
+    color: inherit; // Les liens visités conservent également la couleur héritée du parent.
+  }
+}
+
+li { // Les éléments de liste héritent de la police principale.
+  list-style: none; // Supprime les puces ou numéros par défaut des éléments de liste `<li>`.
+}

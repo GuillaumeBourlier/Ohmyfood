@@ -1,0 +1,71 @@
+//CREATION DE LA SECTION RESTAURANT
+// DISPOSITION GLOBAL DES CARTES DES RESTAURANTS
+.restaurant {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+
+    @include media-min($breakpoint-m) {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+}
+// La classe .cards représente une carte de restaurant. Elle contient l'image, le titre, un bouton "like", et d'autres éléments stylisés.
+.cards {
+    background: $color-white;
+    border-radius: $border-radius-l; 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    height: 251px; 
+    overflow: hidden; // Masque le contenu qui dépasse les dimensions de l'élément.
+    position: relative;
+
+    //La classe .link contient tous les éléments interactifs associés à une carte (image, titre, sous-titre, etc.).
+    .link {
+        width: 100%; 
+        height: 251px; 
+
+        &__picture {
+            width: 100%; 
+            height: 70%; 
+            object-fit: cover; 
+
+            &--top-visible {
+                object-position: center;
+            }
+        }
+
+        &__new-restaurant {
+            background: $color-tertiary; 
+            color: $color-text-inverted; 
+            position: absolute; 
+            right: 13px; 
+            top: 13px;
+            padding: 5px 10px;
+            border-radius: $border-radius-s;
+        }
+
+        &__title {
+            margin: 12px 0 0 12px; 
+        }
+
+        &__subtitle {
+            margin: 4px 0 0 12px;
+            font-weight: $font-weight-light;
+        }
+        // Ajoute un bouton "like" interactif dans la carte.
+        &__like-btn {
+            position: absolute;
+            bottom: 32px; 
+            right: 24px;
+            // Inclut un mixin pour le bouton "like, car sinon le coeur est affiché en noir par défaut.
+            @include heart($font-weight-thin, $color-black, $font-size-l, $font-weight-bold);
+        }
+    }
+
+    @include media-min($breakpoint-m) { // Tablette, jusqu'à 768 pixels de largeur
+        width: 48%; // Chaque carte occupe 48% de la  moitié de la largeur
+    }
+}

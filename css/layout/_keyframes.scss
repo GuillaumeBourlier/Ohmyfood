@@ -1,0 +1,86 @@
+// CREATION DES ANIMATIONS
+
+// ANIMATION DU LOADER (permet de simuler la page de chargement)
+@keyframes loader {
+    0% {
+        opacity: 1; // La page reste visible dans les premières étapes
+    }
+    25% {
+        opacity: 1; // La page reste visible dans les premières étapes
+    }
+    50% {
+        opacity: 1; // La page reste visible dans les premières étapes
+    }
+    75% {
+        opacity: 1; // La page reste visible dans les premières étapes
+    }
+    99% {
+        opacity: 0; // Juste avant la fin, la page disparaît
+        width: 100%;  // La page prend toute la largeur
+        height: 100%; // La page prend toute la hauteur
+    }
+    100% {
+        width: 0; // La page disparaît complètement
+        height: 0; // La page disparaît complètement
+    }
+}
+
+// ANIMATION POUR LES LETTRES FOOD DU LOADER
+@keyframes loader__letters {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); // Les lettres commencent à -100px au-dessus de leur position finale
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(10px); // Les lettres dépassent légèrement leur position finale
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); // Les lettres se placent à leur position finale
+    }
+}
+
+// ANIMATION POUR LA BARRE DE CHARGEMENT DU LOADER
+@keyframes loader__bar {
+    0% {
+        transform: scaleX(0); // La barre commence à 0
+        opacity: .1; // Opacité à 0.1 au début
+    }
+    17% {
+        transform: scaleX(.18); // La barre atteint 18% de sa taille finale
+    }
+    24% {
+        transform: scaleX(.4); // La barre atteint 40% de sa taille finale
+    }
+    46% {
+        transform: scaleX(.81); // La barre atteint 81% de sa taille finale
+    }
+    100% {
+        transform: scaleX(1); // La barre atteint sa taille finale
+    }
+}
+
+// ANIMATION POUR AFFICHER LE MENU DEROULANT SUR LA PAGE DES MENUS
+@keyframes display-menu {
+    0% {
+        opacity: 0; // Opacité à 0 au début
+        transform: scaleX(1) scaleY(0.5); // Échelle horizontale à 1 et verticale à 0.5 au début
+    }
+    25% {
+        opacity: 1; // Opacité à 1 à 25%
+    }
+    50% {
+        transform: scaleX(1) scaleY(1.08); // Échelle horizontale à 1 et verticale à 1.08 à 50%
+    }
+    75% {
+        transform: scaleX(1) scaleY(1); // Échelle horizontale à 1 et verticale à 1 à 75%
+    }
+    90% {
+        transform: scaleX(1) scaleY(1); // Échelle horizontale à 1 et verticale à 1 à 90%
+    }
+    100% {
+        opacity: 1; // Opacité à 1 à 100%
+    }
+}
+

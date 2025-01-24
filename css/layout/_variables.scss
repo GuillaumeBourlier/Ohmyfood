@@ -1,0 +1,54 @@
+// VARIABLES DE STYLE
+
+// Variables de police
+$font-primary: "Shrikhand", serif; // Police principale
+$font-secondary: "Roboto", sans-serif; // Police secondaire
+
+// Variables de gras de police
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+$font-weight-thin: 100;
+
+// Variables de taille de police
+$font-size-xxxxl: 4rem; // 80px
+$font-size-xxxl: 2.5rem; // 40px
+$font-size-xl: 1.75rem; // 28px
+$font-size-l: 1.5rem; // 24px
+$font-size-m: 1.125rem; // 18px
+$font-size-s: 1rem; // 16px
+$font-size-xs: 0.938rem; // 15px
+
+// Variables breakpoints
+$breakpoint-xl: 1200px; //Ordinateur de bureau large, jusqu'à 1200 pixels de largeur.
+$breakpoint-l: 992px; // Ordinateur portable, jusqu'à 992 pixels de largeur.
+$breakpoint-m: 768px; // Tablette, jusqu'à 768 pixels de largeur
+$breakpoint-s: 576px; // Petit écran mobile, jusqu'à 576 pixels de largeur
+
+// Variables de largeur
+$width-xl: 1050px; // Largeur extra-large
+
+// Variables de z-index
+$z-index-modal: 1000; // z-index pour les modales
+$z-index-dropdown: 900; // z-index pour les menus déroulants
+$z-index-navbar: 800; // z-index pour la barre de navigation
+$z-index-location: 700; // z-index pour l'emplacement
+
+// Variables d'ombre portée (box-shadow)
+$box-shadow-xxl: 0px 4px 15px rgba(0, 0, 0, 0.35); // Ombre portée extra-extra-large
+$box-shadow-xl: 0px 4px 15px rgba(0, 0, 0, 0.15); // Ombre portée extra-large
+$box-shadow-l: 0px 4px 10px rgba(0, 0, 0, 0.25); // Ombre portée large
+$box-shadow-m: 0px 4px 4px rgba(0, 0, 0, 0.25); // Ombre portée moyenne
+$box-shadow-s: 0px 2px 4px rgba(0, 0, 0, 0.15); // Ombre portée petite
+
+// Variables de rayon de bordure (border-radius)
+$border-radius-xxl: 30px; // Rayon de bordure extra-extra-large
+$border-radius-xl: 20px; // Rayon de bordure extra-large
+$border-radius-l: 15px; // Rayon de bordure large
+$border-radius-m: 10px; // Rayon de bordure moyen
+$border-radius-s: 2px; // Rayon de bordure petit
+
+// Variables de durée de transition
+$transition-duration: 0.3s; // Durée de transition standard
+$transition-duration-fast: 0.1s; // Durée de transition rapide

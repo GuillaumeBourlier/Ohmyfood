@@ -1,0 +1,45 @@
+// CREATION DE MIXINS POUR LES STYLES REUTILISABLES, cette mixin permet de créer des styles au coeur avec des dégradés de couleur
+
+// Mixin pour appliquer des styles de cœur avec des effets de survol
+@mixin heart($fw-thin, $c-pure-inv, $ft-sz-l, $fw-bld) {
+    display: flex; 
+    cursor: pointer; // Change le curseur en pointeur
+
+    & .fa-heart { // Sélectionne les éléments avec la classe .fa-heart
+        font-weight: $fw-thin;
+        background: $c-pure-inv;
+        font-size: $ft-sz-l;
+        background-clip: text; // Clippe le fond à la forme du texte
+        color: transparent; // Rend le texte transparent
+        transition: transform 300ms ease-in-out; // Ajoute une transition pour la transformation
+
+        &:hover { // Sélectionne les éléments lorsqu'ils sont survolés
+            font-weight: $fw-bld;
+            @include button-gradient-inverted;
+            background-clip: text; // Clippe le fond à la forme du texte
+            color: transparent; 
+            transform: scale(1.1); // Agrandit l'élément de 10%
+        }
+    }
+
+    .checked .fa-heart { // Sélectionne les éléments avec la classe .fa-heart lorsqu'ils sont cochés
+        font-weight: $fw-bld; // Définit le poids de la police à gras
+        @include button-gradient-inverted; // Applique le dégradé de couleur inversé
+        background-clip: text; // Clippe le fond à la forme du texte
+        color: transparent; // Rend le texte transparent
+    }
+}
+// Mixin pour appliquer un dégradé de couleur à un bouton
+@mixin button-gradient {
+    background: rgb(147, 86, 220); background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -moz-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -ms-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
+}
+// Mixin pour appliquer un dégradé de couleur inversé à un bouton
+@mixin button-gradient-inverted {
+    background: rgb(147, 86, 220); background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -moz-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -ms-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
+}
+// Mixin pour appliquer des styles spécifiques aux écrans de largeur minimale définie
+@mixin media-min($_breakpoint) {
+    @media screen and (min-width: $_breakpoint) { // Applique les styles pour les écrans de largeur minimale définie par $_breakpoint
+        & { @content; } // Insère le contenu du mixin
+    }
+}

@@ -1,0 +1,26 @@
+// Correspondante avec le HTML Explore.
+
+.explore {
+    width: 100%; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    align-items: center; 
+
+    & > * { // Sélectionne tous les éléments enfants directs de .explore.
+        margin: 8px 0; // Ajoute une marge de 8px en haut et en bas de chaque élément enfant.
+    }
+
+    &__title { // Sélectionne les éléments avec la classe .explore__title.
+        font-weight: $font-weight-bold; 
+    }
+
+    &__subtitle { // Sélectionne les éléments avec la classe .explore__subtitle.
+        font-weight: $font-weight-light; 
+    }
+
+    @include media-min($breakpoint-xl) { // Applique les styles suivants pour les écrans de largeur minimale définie par $breakpoint-xl.
+        width: 1200px; // Définit la largeur de la section .explore à 1200px pour les grands écrans.
+    }
+}

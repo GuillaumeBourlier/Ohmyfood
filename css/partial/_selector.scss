@@ -1,0 +1,30 @@
+//Correspondance au HTML de la section Fonctionnement et restuarants
+
+.section {
+    width: 100%; 
+    padding: 50px 0; 
+}
+.secondary {
+    background: $color-white; 
+}
+.selection {
+    width: 92%; 
+    margin: 0 auto; 
+    &__title { 
+        margin-bottom: 35px; 
+    }
+    @include media-min($breakpoint-xl) { 
+        width: $width-xl;
+    }
+}
+.select {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-evenly; // Ajoute un espace égal entre les éléments enfants.
+    gap: 25px; 
+    @include media-min($breakpoint-l) { // Applique les styles suivants pour les écrans de largeur minimale définie par $breakpoint-l.
+        flex-direction: row; // Dispose les éléments enfants en ligne.
+    }
+}
+
+
