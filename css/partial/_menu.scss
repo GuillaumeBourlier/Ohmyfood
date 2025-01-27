@@ -6,7 +6,7 @@
         width: 100%;
         object-fit: cover;
         object-position: center;
-
+        // BREAKPOINT TABLET
         @include media-min($breakpoint-m) {
             height: 383px;
         }
@@ -47,6 +47,7 @@
                 animation: display-menu 2s ease-in ($i * 700ms);
             }
         }
+        // 
         .category {
             display: flex;
             flex-direction: column;
@@ -96,7 +97,7 @@
                     }
                     .price {
                         text-align: right;
-                        margin-top: -18px;
+                        margin-top: -20px;
                         font-size: $font-size-xs;
                     }
                 }
@@ -114,10 +115,11 @@
                     width: 69px;
                 }
             }
+            // BREAKPOINT MOBILE
             @include media-min($breakpoint-s) {
                 width: 65%;
             }
-        }
+        } // BREAKPONT ECRAN
         @include media-min($breakpoint-l) {
             width: $width-xl;
             margin: 0 auto;

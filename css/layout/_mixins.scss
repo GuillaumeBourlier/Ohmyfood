@@ -1,13 +1,13 @@
 // CREATION DE MIXINS POUR LES STYLES REUTILISABLES, cette mixin permet de créer des styles au coeur avec des dégradés de couleur
 
 // Mixin pour appliquer des styles de cœur avec des effets de survol
-@mixin heart($fw-thin, $c-pure-inv, $ft-sz-l, $fw-bld) {
+@mixin heart($fw-thin, $c-white, $ft-sz-l, $fw-bld) {
     display: flex; 
     cursor: pointer; // Change le curseur en pointeur
 
     & .fa-heart { // Sélectionne les éléments avec la classe .fa-heart
         font-weight: $fw-thin;
-        background: $c-pure-inv;
+        background: $c-white;
         font-size: $ft-sz-l;
         background-clip: text; // Clippe le fond à la forme du texte
         color: transparent; // Rend le texte transparent

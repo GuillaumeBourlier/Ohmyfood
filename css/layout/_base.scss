@@ -1,8 +1,8 @@
 // Création de variables pour les couleurs, les polices et les tailles de police,... Pour une utilisation cohérente dans tout le projet.
 
 body {
-  font-family: $font-secondary; // Définit la police principale pour tout le contenu du corps de la page, définit par _variables.scss.
-  background-color: $color-canvas; // Applique une couleur de fond à la page, définie par _variables.scss.
+  font-family: $font-secondary;
+  background-color: $color-canvas;
 }
 
 //CREATION D'UNE BOUCLE POUR LES TITRES (h1,h2,h3,h4), a chaque titre on applique une police, une taille, un poids et une couleur différente.
@@ -16,7 +16,7 @@ body {
     color: nth($list: $color-text $color-black $color-text-medium $color-black, $n: $i);
   }
 }
-// Styles cummuns pour les éléments de formulaire et les boutons.
+// Styles communs pour les éléments de formulaire et les boutons.
 input,textarea,select,button {
   font-family: inherit; // Les champs de formulaire et les boutons hériterent de la police définie dans le parent.
   font-size: inherit; // Les champs et boutons hériterent de la taille de police.

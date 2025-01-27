@@ -1,4 +1,4 @@
-//Correspondance au HTML de la section Fonctionnement et restuarants
+//Correspondance au HTML de la section Fonctionnement et Restaurants
 
 .section {
     width: 100%; 
@@ -13,7 +13,7 @@
     &__title { 
         margin-bottom: 35px; 
     }
-    @include media-min($breakpoint-xl) { 
+    @include media-min($breakpoint-xl) { // Ecrans large
         width: $width-xl;
     }
 }
@@ -22,8 +22,8 @@
     flex-direction: column; 
     justify-content: space-evenly; // Ajoute un espace égal entre les éléments enfants.
     gap: 25px; 
-    @include media-min($breakpoint-l) { // Applique les styles suivants pour les écrans de largeur minimale définie par $breakpoint-l.
-        flex-direction: row; // Dispose les éléments enfants en ligne.
+    @include media-min($breakpoint-l) { // Ecrans de largeur minimale
+        flex-direction: row;
     }
 }
 
