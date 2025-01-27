@@ -5,9 +5,7 @@
     position: fixed; // Positionne l'élément de manière fixe par rapport à la fenêtre du navigateur
     width: 100%; 
     height: 100%;
-    background-image: url("/images/restaurants/image.jpg");
-    background-size: cover; 
-    background-position: center; 
+    background: $color-tertiary url("/images/restaurants/image.jpg") center/cover no-repeat;
     opacity: 0; // Rend l'élément complètement transparent
     animation: loader 3000ms ease-out forwards 1; // Applique une animation nommée "loader" avec une durée de 3000ms, un effet de sortie, et une seule itération
 }
