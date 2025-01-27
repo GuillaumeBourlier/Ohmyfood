@@ -639,7 +639,7 @@ li {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url("/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center/cover no-repeat;
+  background: url("https://labelleassiette.fr/wp-content/uploads/2024/05/lart-du-dressage-des-assiettes-astuces-et-conseils-professionnels-2.jpg") center/cover no-repeat;
   opacity: 0;
   animation: loader 3000ms ease-out forwards 1;
 }
