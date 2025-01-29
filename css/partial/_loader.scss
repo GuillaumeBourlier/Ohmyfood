@@ -1,4 +1,4 @@
-//ANIMATION BARRE DE CHARGEMENT
+//ANIMATION BARRE DE CHARGEMENT DU NAVIGATEUR
 
 #overlay {
     z-index: $z-index-dropdown; // Définit l'ordre d'empilement de l'élément #overlay
@@ -6,7 +6,7 @@
     width: 100%; 
     height: 100%;
     background: url("https://labelleassiette.fr/wp-content/uploads/2024/05/lart-du-dressage-des-assiettes-astuces-et-conseils-professionnels-2.jpg") center/cover no-repeat;
-    opacity: 0; // Rend l'élément complètement transparent
+    opacity: 0; 
     animation: loader 3000ms ease-out forwards 1; // Applique une animation nommée "loader" avec une durée de 3000ms, un effet de sortie, et une seule itération
 }
 

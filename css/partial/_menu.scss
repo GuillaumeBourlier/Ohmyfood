@@ -12,7 +12,6 @@
         }
     }
 }
-
 .menu {
     display: flex;
     flex-direction: column;
@@ -47,7 +46,7 @@
                 animation: display-menu 2s ease-in ($i * 700ms);
             }
         }
-        // 
+        // CATÉGORIE (entrée, plats, desserts) & ITEM (nom, description, prix) & CHECKBOX
         .category {
             display: flex;
             flex-direction: column;
@@ -115,6 +114,7 @@
                     width: 69px;
                 }
             }
+            
             // BREAKPOINT MOBILE
             @include media-min($breakpoint-s) {
                 width: 65%;
