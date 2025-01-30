@@ -33,13 +33,3 @@
 @mixin button-gradient {
     background: rgb(147, 86, 220); background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -moz-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -ms-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
 }
-// Mixin pour appliquer un dégradé de couleur inversé à un bouton
-@mixin button-gradient-inverted {
-    background: rgb(147, 86, 220); background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -moz-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -ms-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
-}
-// Mixin pour appliquer des styles spécifiques aux écrans de largeur minimale définie
-@mixin media-min($_breakpoint) {
-    @media screen and (min-width: $_breakpoint) { // Applique les styles pour les écrans de largeur minimale définie par $_breakpoint
-        & { @content; } // Insère le contenu du mixin
-    }
-}
