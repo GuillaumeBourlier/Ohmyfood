@@ -25,6 +25,22 @@
     }
 }
 
+// ANIMATION POUR LES LETTRES FOOD DU LOADER
+@keyframes loader__letters {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); // Les lettres commencent à -100px au-dessus de leur position finale
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(10px); // Les lettres dépassent légèrement leur position finale
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); // Les lettres se placent à leur position finale
+    }
+}
+
 // ANIMATION POUR LA BARRE DE CHARGEMENT DU LOADER
 @keyframes loader__bar {
     0% {
