@@ -21,23 +21,50 @@
 }
 
 .location {
-    display: flex; 
-    z-index: $z-index-location;
+    display: flex;
     position: relative;
+    z-index: $z-index-location;
+
     background-color: $color-canvas-light;
-    width: 100%; 
+    width: 100%;
     height: 50px;
     align-items: center;
     justify-content: center;
     box-shadow: $box-shadow-m;
 
-    &__logo { 
+    &__logo {
         color: $color-text-medium;
     }
 
     &__title {
         margin-left: 17px;
-        font-weight: 500;
+        font-weight: $font-weight-medium;
         color: $color-text-medium;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        margin-left: 17px;
+
+        .location__input {
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+            font-size: $font-size-s;
+            color: $color-text-medium;
+            width: 150px;
+
+            &:focus {
+                outline: none;
+                border-color: $color-primary;
+            }
+
+            &::placeholder {
+                color: $color-text-medium;
+                opacity: 0.7;
+            }
+        }
     }
 }
