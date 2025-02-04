@@ -38,8 +38,12 @@
       <div class="restaurant-menu__title">
         <h1 class="title">À la française</h1>
         <div class="like-btn">
-          <i class="fa-solid fa-heart"></i>
+          <input type="checkbox" id="heart-toggle">  <!--Creation d'un input de type checkboc pour créer une case de cocher "Faire dispiraitre cette case sur ma mixins-->
+          <label for="heart-toggle"> <!--for="heart-toggle" permet de lier visuellement la case à cocher à l'icône de cœur.-->
+            <i class="fa-solid fa-heart"></i> <!--clique sur l'icône de cœur (qui est en fait associée à l'élément label), cela coche ou décoche la case à cocher.-->
+          </label>
         </div>
+        
       </div>
       <article class="category cat-1">
         <h3 class="category__title">ENTRÉES</h3>

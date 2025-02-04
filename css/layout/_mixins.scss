@@ -1,45 +1,66 @@
 // CREATION DE MIXINS POUR LES STYLES REUTILISABLES, cette mixin permet de créer des styles au coeur avec des dégradés de couleur
 
-// Mixin pour appliquer des styles de cœur avec des effets de survol
-@mixin heart($fw-thin, $c-white, $ft-sz-l, $fw-bld) {
-    display: flex; 
-    cursor: pointer; // Change le curseur en pointeur
+// CREATION DE MIXINS POUR LES STYLES REUTILISABLES, cette mixin permet de créer des styles au cœur avec des dégradés de couleur
 
-    & .fa-heart { // Sélectionne les éléments avec la classe .fa-heart
+// Mixin pour appliquer des styles de cœur
+@mixin heart($fw-thin, $c-white, $ft-sz-l, $fw-bld) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    // Cache la checkbox
+    input {
+        display: none;
+    }
+
+    // Label cliquable pour gérer l'état du cœur, le label est un élément associé à l'input (la case à cocher)
+    & label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $ft-sz-l;
+        cursor: pointer;
+    }
+
+    & .fa-heart {
         font-weight: $fw-thin;
         background: $c-white;
-        font-size: $ft-sz-l;
-        background-clip: text; // Clippe le fond à la forme du texte
-        color: transparent; // Rend le texte transparent
-        transition: transform 300ms ease-in-out; // Ajoute une transition pour la transformation
+        background-clip: text;
+        color: transparent;
+        transition: transform 300ms ease-in-out, background 300ms ease-in-out;
 
-        &:hover { // Sélectionne les éléments lorsqu'ils sont survolés
+        &:hover {
             font-weight: $fw-bld;
             @include button-gradient-inverted;
-            background-clip: text; // Clippe le fond à la forme du texte
-            color: transparent; 
-            transform: scale(1.1); // Agrandit l'élément de 10%
+            background-clip: text;
+            color: transparent;
+            transform: scale(1.1);
         }
     }
 
-    .checked .fa-heart { // Sélectionne les éléments avec la classe .fa-heart lorsqu'ils sont cochés
-        font-weight: $fw-bld; // Définit le poids de la police à gras
-        @include button-gradient-inverted; // Applique le dégradé de couleur inversé
-        background-clip: text; // Clippe le fond à la forme du texte
-        color: transparent; // Rend le texte transparent
+   /* Applique le style à l'icône (fa-heart) lorsque la case à cocher (input) est activée */
+    input:checked ~ label .fa-heart {
+        font-weight: $fw-bld;
+        @include button-gradient-inverted;
+        background-clip: text;
+        color: transparent;
+        transform: scale(1.1);
     }
 }
+
 // Mixin pour appliquer un dégradé de couleur à un bouton
 @mixin button-gradient {
-    background: rgb(147, 86, 220); background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -moz-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -ms-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
+    background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
 }
+
 // Mixin pour appliquer un dégradé de couleur inversé à un bouton
 @mixin button-gradient-inverted {
-    background: rgb(147, 86, 220); background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -moz-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%); background: -ms-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
+    background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 97%);
 }
+
 // Mixin pour appliquer des styles spécifiques aux écrans de largeur minimale définie
 @mixin media-min($_breakpoint) {
-    @media screen and (min-width: $_breakpoint) { // Applique les styles pour les écrans de largeur minimale définie par $_breakpoint
-        & { @content; } // Insère le contenu du mixin
+    @media screen and (min-width: $_breakpoint) {
+        & { @content; }
     }
 }

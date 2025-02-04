@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes loader {
   0% {
     opacity: 1;
@@ -158,9 +159,7 @@ li {
   cursor: pointer;
 }
 .btn--main {
-  background: rgb(147, 86, 220);
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  background: -ms-linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
   border-radius: 30px;
   padding: 15px 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -427,35 +426,43 @@ li {
   bottom: 32px;
   right: 24px;
   display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* Applique le style à l'icône (fa-heart) lorsque la case à cocher (input) est activée */
+}
+.cards .link__like-btn input {
+  display: none;
+}
+.cards .link__like-btn label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .cards .link__like-btn .fa-heart {
   font-weight: 100;
   background: #000000;
-  font-size: 1.5rem;
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, background 300ms ease-in-out;
 }
 .cards .link__like-btn .fa-heart:hover {
   font-weight: 700;
-  background: rgb(147, 86, 220);
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  background: -ms-linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
   transform: scale(1.1);
 }
-.cards .link__like-btn .checked .fa-heart {
+.cards .link__like-btn input:checked ~ label .fa-heart {
   font-weight: 700;
-  background: rgb(147, 86, 220);
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  background: -ms-linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  transform: scale(1.1);
 }
 @media screen and (min-width: 768px) {
   .cards {
@@ -507,35 +514,43 @@ li {
 .menu .restaurant-menu__title .like-btn {
   margin-left: 32px;
   display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* Applique le style à l'icône (fa-heart) lorsque la case à cocher (input) est activée */
+}
+.menu .restaurant-menu__title .like-btn input {
+  display: none;
+}
+.menu .restaurant-menu__title .like-btn label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .menu .restaurant-menu__title .like-btn .fa-heart {
   font-weight: 100;
   background: #000000;
-  font-size: 1.5rem;
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, background 300ms ease-in-out;
 }
 .menu .restaurant-menu__title .like-btn .fa-heart:hover {
   font-weight: 700;
-  background: rgb(147, 86, 220);
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  background: -ms-linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
   transform: scale(1.1);
 }
-.menu .restaurant-menu__title .like-btn .checked .fa-heart {
+.menu .restaurant-menu__title .like-btn input:checked ~ label .fa-heart {
   font-weight: 700;
-  background: rgb(147, 86, 220);
   background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  background: -ms-linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  transform: scale(1.1);
 }
 .menu .restaurant-menu .cat-1 {
   animation: display-menu 2s ease-in 700ms;
